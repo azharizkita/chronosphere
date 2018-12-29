@@ -49,18 +49,18 @@ reference.on('value', function (snapshot) {
     $("#messageContainer").empty();
     snapshot.forEach(function (child) {
         let childData = child.val();
-        let floatS = "";
+        let floatR = "";
         let bg = "background: white;";
         if (email === childData.email) {
-            floatS = "float: right;";
-            bg = "background: #bbff91;";
+            floatR = "-reverse";
+            bg = "background: #83e996;";
         }
         let messageTemplate =
-            '<div class="d-flex flex-row-reverse">' +
-            '<div class="" style="width: fit-content !important;">' +
-            '<small class="text-muted">' + childData.name + '</small>' +
-            '<div class="card container">' + childData.message + '</div>' +
-            '</div>' +
+            '<div class="d-flex flex-row'+floatR+'" style="padding-bottom: 10px">' +
+                '<div style="width: fit-content !important;">' +
+                    '<small class="text-muted" style="font-size: x-small">' + childData.name + '</small>' +
+                    '<div class="card container shadow" style="border-radius: 8px ; border-color: rgba(0, 0, 0, 0.1) ;'+bg+'">' + childData.message + '</div>' +
+                '</div>' +
             '</div>';
 
         let container = document.createElement('div');
