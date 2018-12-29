@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chronosphere</title>
+    <script src="js/jquery.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+    <script src="js/general.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        .floating{
+            position: fixed;
+            right: 10px;
+            left: 10px;
+            bottom: -5px;
+            z-index: 5
+        }
+    </style>
+</head>
+<body>
+<div style="padding-left: 2%; padding-right: 2%">
+    <div id="messageContainer" class="messageContainer" style="padding-bottom: 55px; width: 100% !important;"></div>
+    <div class="floating">
+        <iframe name="async" style="display:none;"></iframe>
+        <form onsubmit="send();" target="async">
+            <div class="input-group mb-3">
+                <input required type="text" id="message" class="form-control"
+                       placeholder="enter a message">
+                <div class="input-group-append">
+                    <button class="btn btn-info" type="submit">Send</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
